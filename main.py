@@ -83,7 +83,7 @@ async def classify_number(number: str = Query(..., description="The number to cl
         num = int(number)
     except ValueError:
         raise HTTPException(
-            status_code=200,
+            status_code=400,
             detail={"number": number, "error": True}
         )
     
